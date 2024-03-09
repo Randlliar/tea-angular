@@ -1,0 +1,22 @@
+.tea {
+  width:300px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  border: 2px solid #fcc574;
+  border-radius: 10px;
+  padding: 20px;
+  gap: 5px;
+}
+
+.tea img {
+  width: 50%;
+  height: 50%;
+}
+
+.tea-title {
+  font-family: "Arial Narrow", sans-serif;
+  font-size:  20px;
+  font-weight: bold;
+}

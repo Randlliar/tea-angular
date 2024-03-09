@@ -1,0 +1,19 @@
+.tea-items {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.catalog-title {
+  text-align: center;
+  font-family: "Arial Black", sans-serif;
+  font-size: 48px;
+  color: #fcc574;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 0;
+}

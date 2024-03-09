@@ -1,0 +1,23 @@
+<div class="tea">
+
+  <div class="tea-img" *ngIf="card?.image; then productImageBlock else defaultImageBlock">
+  </div>
+
+  <ng-template #productImageBlock>
+    <div class="tea-img">
+      <img src="{{card?.image}}" alt="Product pizza">
+    </div>
+  </ng-template>
+
+  <ng-template #defaultImageBlock>
+    <div class="tea-img">
+      <img src="assets/images/1.png" alt="Product pizza">
+    </div>
+  </ng-template>
+
+  <div class="tea-title">{{card?.title}} </div>
+  <div >{{card?.price}} р.</div>
+  <a class="btn btn-primary" [routerLink]="['/catalog', card?.id]" >Подробнее</a>
+
+</div>
+

@@ -1,0 +1,30 @@
+.popup  {
+  margin: 0;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid gray;
+  border-radius: 20px;
+  position: fixed;
+  width: 400px;
+  height: 200px;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  //justify-content: flex-start;
+  //align-items: center;
+  flex-wrap: wrap;
+
+}
+
+.popup span {
+  font-size: 24px;
+}
+
+.btn-close {
+ position: fixed;
+  right: 45px;
+}
+
+.main {
+  height: 100%;
+}

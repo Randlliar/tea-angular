@@ -1,1 +1,42 @@
-/* You can add global styles to this file, and also import other style files */
+.fade:not(.show) {
+  opacity: 1;
+}
+
+.ui-icon-triangle-1-e {
+  background-position: -67px -16px;
+}
+
+.ui-icon-triangle-1-s {
+  background-position: -2px -16px;
+}
+
+.ui-icon {
+  background-image: url("assets/images/ui-icons_ffffff_256x240.png");
+}
+
+.ui-accordion .ui-accordion-header {
+  fill: white;
+  color: white;
+}
+
+.ui-state-hover .ui-icon{
+  background-image: url("assets/images/ui-icons_ffffff_256x240.png");
+}
+
+.ui-state-active .ui-icon, .ui-button:active .ui-icon {
+ background-image: url("assets/images/arrow-up.svg");
+}
+
+.card {
+  width: 400px;
+}
+
+.card-deck {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-expand-lg .navbar-collapse {
+  justify-content: space-between;
+}
+

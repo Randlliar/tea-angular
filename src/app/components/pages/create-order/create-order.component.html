@@ -1,0 +1,109 @@
+<!--<form id="order-inputs">-->
+<form name="validate-form" class="row g-3 px-3 w-75 mx-auto" *ngIf="!responseSuccess">
+  <div class="h2 text-center my-5 ">Сделать заказ</div>
+  <div class="col-md-6 mt-4">
+    <label class="form-label">Чай</label>
+    <input type="text" class="form-control" name="tea" placeholder="Tea" [formControl]="productTitle">
+  </div>
+  <div class="col-md-6 mt-4">
+    <label class="form-label">Комментарий</label>
+    <input type="text" class="form-control" name="comment" placeholder="Comment" [formControl]="comment">
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Имя</label>
+    <input type="text" class="form-control" id="nameOrderInput" [formControl]="name" onlyLettersValidator>
+
+
+    <div *ngIf="name.invalid && (name.dirty || name.touched)">
+      <div class="text-danger" *ngIf="name.errors?.['required']">
+        Phone is required
+      </div>
+    </div>
+    <div *ngIf="name.invalid && (name.dirty || name.touched)">
+      <div class="text-danger" *ngIf="name.errors?.['pattern']">
+        Name can contain only letters
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Фамилия</label>
+    <input type="text" class="form-control" id="surnameOrderInput" [formControl]="surname" onlyLettersValidator>
+
+    <div *ngIf="surname.invalid && (surname.dirty || surname.touched)">
+      <div class="text-danger" *ngIf="surname.errors?.['required']">
+        Phone is required
+      </div>
+    </div>
+    <div *ngIf="surname.invalid && (surname.dirty || surname.touched)">
+      <div class="text-danger" *ngIf="surname.errors?.['pattern']">
+        Surname can contain only letters
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Телефон</label>
+    <div class="input-group">
+      <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone" [formControl]="phone"
+             phoneValidator>
+    </div>
+
+    <div *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+      <div class="text-danger" *ngIf="phone.errors?.['required']">
+        Phone is required
+      </div>
+    </div>
+    <div *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+      <div class="text-danger" *ngIf="phone.errors?.['pattern']">
+        Phone is not in format
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-md-6 mt-4">
+    <label class="form-label">Страна</label>
+    <input type="text" class="form-control" id="countryOrderInput" [formControl]="country" onlyLettersValidator>
+
+    <div *ngIf="country.invalid && (country.dirty || country.touched)">
+      <div class="text-danger" *ngIf="country.errors?.['required']">
+        Phone is required
+      </div>
+    </div>
+    <div *ngIf="country.invalid && (country.dirty || country.touched)">
+      <div class="text-danger" *ngIf="country.errors?.['pattern']">
+        Country can contain only letters
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 mt-4">
+    <label class="form-label">Индекс</label>
+    <input type="text" class="form-control" id="indexOrderInput" [formControl]="zip">
+  </div>
+  <div class="col-12 mt-4">
+    <div class="form-check">
+      <label class="form-label">Адрес</label>
+      <input type="text" class="form-control" id="addressOrderInput" [formControl]="address" addressValidator>
+
+
+      <div *ngIf="address.invalid && (address.dirty || address.touched)">
+        <div class="text-danger" *ngIf="address.errors?.['required']">
+          Phone is required
+        </div>
+      </div>
+      <div *ngIf="address.invalid && (address.dirty || address.touched)">
+        <div class="text-danger" *ngIf="address.errors?.['pattern']">
+          Address is not in format
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 mt-4 d-flex justify-content-center align-items-center ">
+    <button id="sent-form" class="btn btn-primary m-3" type="submit" (click)="createOrder()">Отправить</button>
+      <div class="text-danger" *ngIf="!responseSuccess && isSubmit">
+        Произошла ошибка. Попробуйте еще раз.
+    </div>
+  </div>
+</form>
+<div id="order-success" *ngIf="responseSuccess">
+  <div class="h2 text-center my-5">Спасибо за заказ!</div>
+</div>

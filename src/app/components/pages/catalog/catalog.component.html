@@ -1,0 +1,10 @@
+<section class="catalog" id="tea">
+  <div class="container">
+    <h2 class="catalog-title">
+      Выберите свой чай
+    </h2>
+    <div class="tea-items">
+      <tea-card *ngFor="let catalog of catalogs" [card]="catalog"></tea-card>
+    </div>
+  </div>
+</section>
