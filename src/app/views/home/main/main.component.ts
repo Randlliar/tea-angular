@@ -21,7 +21,5 @@ export class MainComponent implements OnInit {
       .subscribe(() => {
         this.isShowPopup = true;
       })
-
   }
-
 }

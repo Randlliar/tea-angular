@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Card} from "../../../types/card";
+import {Card} from "../../../../types/card";
 
 @Component({
   selector: 'tea-card',

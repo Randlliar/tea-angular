@@ -3,20 +3,24 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {MainComponent} from './components/pages/main/main.component';
-import {HeaderComponent} from './components/common/header/header.component';
-import {FooterComponent} from './components/common/footer/footer.component';
-import {CatalogComponent} from './components/pages/catalog/catalog.component';
-import {CatalogService} from "./services/catalog.service";
+import {CatalogService} from "./shared/services/catalog.service";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {AuthInterceptor} from "./auth/auth.interceptor";
-import {TeaCardComponent} from './components/common/tea-card/tea-card.component';
-import {TeaDetailsComponent} from './components/pages/tea-details/tea-details.component';
-import {CreateOrderComponent} from './components/pages/create-order/create-order.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { PhoneValidatorDirective } from './directives/phone-validator.directive';
-import { OnlyLettersValidatorDirective } from './directives/only-letters-validator.directive';
-import { AddressValidatorDirective } from './directives/address-validator.directive';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MainComponent} from "./views/home/main/main.component";
+import {HeaderComponent} from "./shared/components/common/header/header.component";
+import {FooterComponent} from "./shared/components/common/footer/footer.component";
+import {CatalogComponent} from "./views/home/catalog/catalog.component";
+import {TeaCardComponent} from "./shared/components/common/tea-card/tea-card.component";
+import {TeaDetailsComponent} from "./views/home/tea-details/tea-details.component";
+import {CreateOrderComponent} from "./views/home/create-order/create-order.component";
+import {PhoneValidatorDirective} from "./shared/directives/phone-validator.directive";
+import {OnlyLettersValidatorDirective} from "./shared/directives/only-letters-validator.directive";
+import {AddressValidatorDirective} from "./shared/directives/address-validator.directive";
+import {SharedModule} from "./shared/shared.module";
+import { LayoutComponent } from './views/layout.component';
+import {HomeModule} from "./views/home/home.module";
 
 @NgModule({
   declarations: [
@@ -31,13 +35,17 @@ import { AddressValidatorDirective } from './directives/address-validator.direct
     PhoneValidatorDirective,
     OnlyLettersValidatorDirective,
     AddressValidatorDirective,
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    SharedModule,
+    ReactiveFormsModule,
+    HomeModule,
+    NgbModule
   ],
   providers: [
     CatalogService,

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CatalogService} from "../../../services/catalog.service";
+import {CatalogService} from "../../../shared/services/catalog.service";
 import {Router} from "@angular/router";
 import {Card} from "../../../types/card";
 
@@ -12,16 +12,7 @@ export class CatalogComponent implements OnInit {
 
   public catalogs: Card[] = []
   constructor(private catalogService: CatalogService,
-              private router: Router,
-              ) {
-    this.catalogs = [{
-      id: 0,
-      image: '',
-      title: '',
-      price: 0,
-      description:''
-    }]
-  }
+              private router: Router) {}
 
 
 

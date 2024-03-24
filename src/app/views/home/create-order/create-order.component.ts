@@ -1,8 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {Subscription} from "rxjs";
-import {FormControl} from "@angular/forms";
-import {CatalogService} from "../../../services/catalog.service";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {CatalogService} from "../../../shared/services/catalog.service";
 
 @Component({
   selector: 'create-order',
@@ -20,14 +20,16 @@ export class CreateOrderComponent implements OnInit, OnDestroy {
   public responseSuccess = false;
   public isSubmit = false;
 
-  productTitle = new FormControl();
-  address = new FormControl();
-  name = new FormControl();
-  surname = new FormControl();
-  phone = new FormControl();
-  comment = new FormControl();
-  zip = new FormControl();
-  country = new FormControl();
+    productTitle = new FormControl();
+    address = new FormControl();
+    name = new FormControl();
+    surname = new FormControl();
+    phone = new FormControl('', [Validators.required]);
+    comment = new FormControl();
+    zip = new FormControl();
+    country = new FormControl();
+
+
 
   ngOnInit(): void {
 
@@ -43,7 +45,7 @@ export class CreateOrderComponent implements OnInit, OnDestroy {
     this.subscriptionOrder = this.catalogService.createOrder({
       name: this.name.value,
       last_name: this.surname.value,
-      phone: this.phone.value,
+      phone: this.phone.value!,
       country: this.country.value,
       zip: this.zip.value,
       product: this.productTitle.value,

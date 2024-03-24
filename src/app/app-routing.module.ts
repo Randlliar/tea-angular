@@ -1,15 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {MainComponent} from "./components/pages/main/main.component";
-import {CatalogComponent} from "./components/pages/catalog/catalog.component";
-import {TeaDetailsComponent} from "./components/pages/tea-details/tea-details.component";
-import {CreateOrderComponent} from "./components/pages/create-order/create-order.component";
+import {MainComponent} from "./views/home/main/main.component";
 
 const routes: Routes = [
+
+
+  // {
+  //   path: '',
+  //   component: LayoutComponent,
+  //   children: [
+  //     {path: '', loadChildren: () => import('./views/home/home.module').then(m => m.HomeModule)},
+  //     {path: 'order', loadChildren: () => import('./views/order/order.module').then(m => m.OrderModule)},
+  //     {path: 'products', loadChildren: () => import('./views/products/products.module').then(m => m.ProductsModule)},
+  //   ]
+  // },
+
   {path: '', component: MainComponent},
-  {path: 'catalog', component: CatalogComponent},
-  {path: 'catalog/:id', component: TeaDetailsComponent},
-  {path: 'order', component: CreateOrderComponent},
+
 ];
 
 @NgModule({
